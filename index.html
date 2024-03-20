@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup app</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+    <ion-app>
+
+        <ion-tabs>
+            <ion-tab tab="home">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Home</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+            </ion-tab>
+
+            <ion-tab tab="search">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Search</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                
+                <ion-content>
+
+                    <ion-card>
+                        <ion-segment value="default">
+                            <ion-segment-button id="search-type-tag" value="default">
+                                <ion-label>Tag</ion-label>
+                            </ion-segment-button>
+                            <ion-segment-button id="search-type-product" value="segment">
+                                <ion-label>Product Name</ion-label>
+                            </ion-segment-button>
+                        </ion-segment>
+                    </ion-card>
+                    
+                    <ion-card id="search-type-content">
+                            <!-- <ion-card-header>
+                                <ion-card-title id="title-name"> Search by tag and product</ion-card-title>
+                            </ion-card-header> -->
+                            <ion-card-content>
+                                <ion-list>
+                                <ion-item>
+                                    <!-- <ion-input label-placement="floating" label="Enter brand name:" id="input-search-brand"></ion-input> -->
+                                    <ion-select id="select-product" placeholder="Select product type" >
+                                        <ion-select-option value="lipstick">Lipstick</ion-select-option>
+                                        <ion-select-option value="blush">Blush</ion-select-option>
+                                        <ion-select-option value="eyeliner">Eyeliner</ion-select-option>
+                                        <ion-select-option value="eyebrow">Eyebrow</ion-select-option>
+                                        <ion-select-option value="eyeshadow">Eyeshadow</ion-select-option>
+                                        <ion-select-option value="foundation">Foundation</ion-select-option>
+                                        <ion-select-option value="lip_liner">Lip Liner</ion-select-option>
+                                        <ion-select-option value="mascara">Mascara</ion-select-option>
+                                        <ion-select-option value="nail_polish">Nail Polish</ion-select-option>
+                                    </ion-select>
+                                </ion-item>
+                                
+                                <ion-item>
+                                    <!-- <ion-input label-placement="floating" label="Enter product name:" id="input-search-product"></ion-input> -->
+                                    <ion-select id="select-tag" placeholder="Select tag" >
+                                        <ion-select-option value="Vegan">Vegan</ion-select-option>
+                                        <ion-select-option value="Non-GMO">Non-GMO</ion-select-option>
+                                        <ion-select-option value="Gluten+Free">Gluten Free</ion-select-option>
+                                        <ion-select-option value="No+Talc">No Talc</ion-select-option>
+                                        <ion-select-option value="Organic">Organic</ion-select-option>    
+                                    </ion-select>
+                                </ion-item>
+                            </ion-list>
+                                <ion-button id="btn-search" expand="block">Search</ion-button>
+                            </ion-card-content>
+                    </ion-card>
+    
+                    <!-- <ion-card id="product">
+                        <ion-img id="product-img"></ion-img>
+                        <ion-header id="product-name">Product name</ion-header>
+                        <ion-header id="barnd-name">Product name</ion-header>
+                    </ion-card> -->
+                    <ion-list id="list-output"></ion-list>
+                </ion-content>
+            </ion-tab>
+
+            <ion-tab tab="profile">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Your Profile</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+
+                <ion-content>
+                    <ion-card>
+                        <ion-img src="Pictures\pexels-anderson-guerra-1115128.jpg"></ion-img>
+                        <ion-card-header>
+                            <ion-card-title>
+                                Your wishlist
+                            </ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            Check out all the things saved to your wishlist here.
+                        </ion-card-content>
+                    </ion-card>
+
+                    <ion-card>
+                        <ion-img src="Pictures\evangeline-sarney-EyrjiJAwLjQ-unsplash.jpg"></ion-img>
+                        <ion-card-header>
+                            <ion-card-title>
+                                Your wishlist
+                            </ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            Check out all the things saved to your wishlist here.
+                        </ion-card-content>
+                    </ion-card>
+
+                </ion-content>
+
+
+            </ion-tab>
+
+
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="home">
+                    <ion-icon name="home"></ion-icon>
+                    <!-- <ion-label><h1>Home</h1></ion-label> -->
+                </ion-tab-button>
+
+                <ion-tab-button tab="search">
+                    <ion-icon name="search"></ion-icon>
+
+                    <!-- <ion-label><h1>Search</h1></ion-label> -->
+                </ion-tab-button>
+
+                <ion-tab-button tab="profile">
+                    <ion-icon name="person"></ion-icon>
+                    <!-- <ion-label><h1>Profile</h1></ion-label> -->
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+        
+    </ion-app>
+    <script src="app.js"></script>
+</body>
+
+</html>
