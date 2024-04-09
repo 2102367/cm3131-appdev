@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup app</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+    <ion-app>
+
+        <ion-app>
+            <ion-nav root="page-one"></ion-nav>
+          </ion-app>
+          
+          <script>
+            class PageOne extends HTMLElement {
+              connectedCallback() {
+                this.innerHTML = `
+
+                    <ion-card id="search-type-content">
+                            <!-- <ion-card-header>
+                                <ion-card-title id="title-name"> Search by tag and product</ion-card-title>
+                            </ion-card-header> -->
+                            <ion-card-content>
+                                <ion-list>
+                                <ion-item>
+                                    <!-- <ion-input label-placement="floating" label="Enter brand name:" id="input-search-brand"></ion-input> -->
+                                    <ion-select id="select-product" placeholder="Select product type" >
+                                        <ion-select-option value="lipstick">Lipstick</ion-select-option>
+                                        <ion-select-option value="blush">Blush</ion-select-option>
+                                        <ion-select-option value="eyeliner">Eyeliner</ion-select-option>
+                                        <ion-select-option value="eyebrow">Eyebrow</ion-select-option>
+                                        <ion-select-option value="eyeshadow">Eyeshadow</ion-select-option>
+                                        <ion-select-option value="foundation">Foundation</ion-select-option>
+                                        <ion-select-option value="lip_liner">Lip Liner</ion-select-option>
+                                        <ion-select-option value="mascara">Mascara</ion-select-option>
+                                        <ion-select-option value="nail_polish">Nail Polish</ion-select-option>
+                                    </ion-select>
+                                </ion-item>
+                                
+                                <ion-item>
+                                    <!-- <ion-input label-placement="floating" label="Enter product name:" id="input-search-product"></ion-input> -->
+                                    <ion-select id="select-tag" placeholder="Select tag" >
+                                        <ion-select-option value="Vegan">Vegan</ion-select-option>
+                                        <ion-select-option value="Non-GMO">Non-GMO</ion-select-option>
+                                        <ion-select-option value="Gluten+Free">Gluten Free</ion-select-option>
+                                        <ion-select-option value="No+Talc">No Talc</ion-select-option>
+                                        <ion-select-option value="Organic">Organic</ion-select-option>    
+                                    </ion-select>
+                                </ion-item>
+                            </ion-list>
+                                <ion-button id="btn-search" expand="block">Search</ion-button>
+                            </ion-card-content>
+                    </ion-card>
+
+                  <ion-content class="ion-padding">
+                    <ion-nav-link router-direction="forward" component="page-two">
+                      <ion-button>Go to Page Two</ion-button>
+                    </ion-nav-link>
+                  </ion-content>
+                `;
+              }
+            }
+            class PageTwo extends HTMLElement {
+              connectedCallback() {
+                this.innerHTML = `
+
+                <ion-card id="search-type-content">
+
+                    <ion-card-content>
+                        <ion-list>
+                            <ion-item>
+                                <ion-input label-placement="floating" label="Enter brand name:" id="input-search-brand">
+                            </ion-item>
+                                
+                            </ion-list>
+                                <ion-button id="btn-search" expand="block">Search</ion-button>
+                            </ion-card-content>
+                    </ion-card>
+
+                    <ion-content class="ion-padding">
+                        <h1>Page Two</h1>
+                        <div>
+                        <ion-nav-link router-direction="forward" component="page-one">
+                            <ion-button>Back to page one</ion-button>
+                        </ion-nav-link>
+                        </div>
+                    </ion-content>
+                `;
+              }
+            }
+
+            customElements.define('page-one', PageOne);
+            customElements.define('page-two', PageTwo);
+        </script>
+        
+    </ion-app>
+    <script src="app.js"></script>
+</body>
+
+</html>
