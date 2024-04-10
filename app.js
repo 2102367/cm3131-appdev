@@ -4,13 +4,12 @@ const imageDisplay = document.getElementById("img-display");
 const productTitle = document.getElementById("title-name");
 const searchButton = document.getElementById("btn-search");
 const outputList = document.getElementById("list-output");
+const selectProduct = document.getElementById("select-product");
+const selectTags = document.getElementById("select-tag");
 
 //old search that was only text input
 // const searchtTag = document.getElementById("input-search-brand");
 // const searchProduct = document.getElementById("input-search-product");
-
-const selectProduct = document.getElementById("select-product");
-const selectTags = document.getElementById("select-tag");
 
 const wishlistBtn = document.getElementById("wishlist-btn");
 
@@ -20,12 +19,9 @@ let wishlistArray = [];
 
 searchButton.addEventListener("click", getProducts);
 
-// wishlistBtn.addEventListener("click", getCurrentProduct);
-
 //----------------------------------------------profile page stuff
 
 const wishlistOutput = document.getElementById("wishlist-output");
-
 const profileBtn = document.getElementById("profile-btn");
 
 profileBtn.addEventListener("click", savedItemDisplay);
