@@ -24,29 +24,21 @@
                 <ion-content>
                     <ion-card>
                         <ion-card-header>
-                        <ion-card-title>Card Title</ion-card-title>
+                        <ion-card-title>Search for sustainable products!</ion-card-title>
                         <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
                         </ion-card-header>
                     
                         <ion-card-content>
-                        Here's a small text description for the card contefdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzznt. Nothing more, nothing less.
+                            Here's a small text description for the card contefdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzznt. Nothing more, nothing less.                            
+                            <ion-tab-button tab="search">
+                                <ion-label><h1>Start searching!</h1></ion-label>
+                            </ion-tab-button>
                         </ion-card-content>
                     </ion-card>
 
                     <ion-card>
                         <ion-card-header>
-                        <ion-card-title>Card Title</ion-card-title>
-                        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                        </ion-card-header>
-                    
-                        <ion-card-content>
-                        Here's a small text description for the card content. Nothing more, nothing less.
-                        </ion-card-content>
-                    </ion-card>
-
-                    <ion-card>
-                        <ion-card-header>
-                        <ion-card-title>Card Title</ion-card-title>
+                        <ion-card-title>Why is sustainability important?</ion-card-title>
                         <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
                         </ion-card-header>
                     
@@ -143,21 +135,9 @@
                         </ion-card-content>
                     </ion-card>
 
-                    <ion-card>
-                        <ion-img src="Pictures\evangeline-sarney-EyrjiJAwLjQ-unsplash.jpg"></ion-img>
-                        <ion-card-header>
-                            <ion-card-title>
-                                Your wishlist
-                            </ion-card-title>
-                        </ion-card-header>
-                        <ion-card-content>
-                            Check out all the things saved to your wishlist here.
-                        </ion-card-content>
-                    </ion-card>
+                    <ion-list id="list-output"></ion-list>
 
                 </ion-content>
-
-
             </ion-tab>
 
 
@@ -173,7 +153,7 @@
                     <!-- <ion-label><h1>Search</h1></ion-label> -->
                 </ion-tab-button>
 
-                <ion-tab-button tab="profile">
+                <ion-tab-button tab="profile" id="profile-btn">
                     <ion-icon name="person"></ion-icon>
                     <!-- <ion-label><h1>Profile</h1></ion-label> -->
                 </ion-tab-button>

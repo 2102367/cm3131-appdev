@@ -104,7 +104,14 @@ function saveItem(name, brand, image_link, description){
 }
 
 
+function savedItemDisplay(){
+    
+}
+
+
 function reportError(anError){
     console.log(anError);
 }
+
+
 
