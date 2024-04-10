@@ -56,6 +56,7 @@ function updateDisplay(jsonObj){
         let productLink = currentListArray[i].product_link;
         let productPrice = currentListArray[i].price;
         //sometimes the price shows zero as there are some problems with the API itself.
+        //the prices are also outdated on the API
 
         let card = document.createElement("ion-card");
 
@@ -127,11 +128,15 @@ function savedItemDisplay(){
     
         let cardContent = document.createElement("ion-card-content");
         cardContent.innerHTML = `
-        <ion-card>
-            <ion-card-content>
-                <p>Nothing in wishlist yet!</p>
-            </ion-card-content>
-        <ion-card>
+            <ion-grid>
+                <ion-row>
+                    <ion-col></ion-col>
+                    <ion-col><h2>Nothing in wishlist yet!</h2></ion-col>
+                    <ion-col></ion-col>
+                </ion-row>
+            </ion-grid>
+
+
         `;
         wishlistOutput.appendChild(cardContent);
     }
@@ -162,7 +167,7 @@ function savedItemDisplay(){
                         Brand: ${brandName}
                     </ion-card-subtitle>
                     <ion-card-subtitle>
-                    Price: ${productPrice}
+                    Price: $${productPrice}
                     </ion-card-subtitle>
                 </ion-card-header>
     
@@ -179,7 +184,6 @@ function savedItemDisplay(){
         }
     }
 }
-
 
 function reportError(anError){
     console.log(anError);

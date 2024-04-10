@@ -1,0 +1,10 @@
+*{
+    --ion-tab-bar-background: pink;
+    --ion-tab-bar-color: white;
+    --ion-tab-bar-color-selected: rgb(129, 55, 67);
+    --ion-toolbar-background: pink;
+    --ion-toolbar-color: rgb(129, 55, 67);
+    --ion-color-primary: rgb(129, 55, 67);
+    --ion-color-primary-shade: rgb(66, 9, 19);
+
+}
