@@ -1,4 +1,4 @@
-//search page stuff
+//----------------------------------------------search page stuff
 
 const imageDisplay = document.getElementById("img-display");
 const productTitle = document.getElementById("title-name");
@@ -22,7 +22,7 @@ searchButton.addEventListener("click", getProducts);
 
 // wishlistBtn.addEventListener("click", getCurrentProduct);
 
-//profile page stuff
+//----------------------------------------------profile page stuff
 
 const wishlistOutput = document.getElementById("wishlist-output");
 
@@ -33,13 +33,11 @@ profileBtn.addEventListener("click", savedItemDisplay);
 
 function getProducts(){
     // let searchInputTxt = document.getElementById("input-search").value;
-
     fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${selectTags.value}&product_type=${selectProduct.value}`).then(getJson).then(updateDisplay).catch(reportError);
 }
 
 function getJson(aResponse){
     // console.log(aResponse);
-
     const theResponse = aResponse.json();
     console.log(theResponse);
 
@@ -98,7 +96,6 @@ function updateDisplay(jsonObj){
 
 function saveItem(name, brand, image_link, description){
     //removed description as there are problems with commas and parentheses in description
-
     let item = {
         productName: name ,
         brandName: brand ,

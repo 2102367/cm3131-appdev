@@ -57,26 +57,16 @@
                     </ion-toolbar>
                 </ion-header>
                 
-                <ion-content>
-
-                    <!-- <ion-card>
-                        <ion-segment value="default">
-                            <ion-segment-button id="search-type-tag" value="default">
-                                <ion-label>Tag</ion-label>
-                            </ion-segment-button>
-                            <ion-segment-button id="search-type-product" value="segment">
-                                <ion-label>Product Name</ion-label>
-                            </ion-segment-button>
-                        </ion-segment>
-                    </ion-card> -->
-                    
+                <ion-content>                    
                     <ion-card id="search-type-content">
-                            <!-- <ion-card-header>
-                                <ion-card-title id="title-name"> Search by tag and product</ion-card-title>
-                            </ion-card-header> -->
-                            <ion-card-content>
-                                <ion-list>
+
+                        <ion-card-header>
+                            <ion-card-title id="title-name"> Search by tag and product</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-list>
                                 <ion-item>
+                                    <!-- old way of searching without restraints -->
                                     <!-- <ion-input label-placement="floating" label="Enter brand name:" id="input-search-brand"></ion-input> -->
                                     <ion-select id="select-product" placeholder="Select product type" >
                                         <ion-select-option value="lipstick">Lipstick</ion-select-option>
@@ -104,14 +94,11 @@
                             </ion-list>
                                 <ion-button id="btn-search" expand="block">Search</ion-button>
                             </ion-card-content>
+
                     </ion-card>
-    
-                    <!-- <ion-card id="product">
-                        <ion-img id="product-img"></ion-img>
-                        <ion-header id="product-name">Product name</ion-header>
-                        <ion-header id="barnd-name">Product name</ion-header>
-                    </ion-card> -->
+
                     <ion-list id="list-output"></ion-list>
+                    
                 </ion-content>
             </ion-tab>
 
@@ -144,18 +131,14 @@
             <ion-tab-bar slot="bottom">
                 <ion-tab-button tab="home">
                     <ion-icon name="home"></ion-icon>
-                    <!-- <ion-label><h1>Home</h1></ion-label> -->
                 </ion-tab-button>
 
                 <ion-tab-button tab="search">
                     <ion-icon name="search"></ion-icon>
-
-                    <!-- <ion-label><h1>Search</h1></ion-label> -->
                 </ion-tab-button>
 
                 <ion-tab-button tab="profile" id="profile-btn">
                     <ion-icon name="person"></ion-icon>
-                    <!-- <ion-label><h1>Profile</h1></ion-label> -->
                 </ion-tab-button>
             </ion-tab-bar>
         </ion-tabs>
