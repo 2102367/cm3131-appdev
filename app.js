@@ -1,3 +1,5 @@
+//search page stuff
+
 const imageDisplay = document.getElementById("img-display");
 const productTitle = document.getElementById("title-name");
 const searchButton = document.getElementById("btn-search");
@@ -19,6 +21,15 @@ let wishlistArray = [];
 searchButton.addEventListener("click", getProducts);
 
 // wishlistBtn.addEventListener("click", getCurrentProduct);
+
+//profile page stuff
+
+const wishlistOutput = document.getElementById("wishlist-output");
+
+const profileBtn = document.getElementById("profile-btn");
+
+profileBtn.addEventListener("click", savedItemDisplay);
+
 
 function getProducts(){
     // let searchInputTxt = document.getElementById("input-search").value;
@@ -70,14 +81,10 @@ function updateDisplay(jsonObj){
 
 
             <ion-card-content>
-
                 // add rating here maybe
-
                 <p>${productDesc}</p>
                 <br>
-                <ion-button expand="block" id="wishlist-btn" onclick='saveItem("${productName}", "${brandName}", "${productImage}")'>Add to list</ion-button>
-                <ion-button expand="block">Button</ion-button>
-                
+                <ion-button expand="block" id="wishlist-btn" onclick='saveItem("${productName}", "${brandName}", "${productImage}")'>Add to list</ion-button>                
             </ion-card-content>
 
         <ion-card>
@@ -103,15 +110,74 @@ function saveItem(name, brand, image_link, description){
     console.log(wishlistArray);
 }
 
+function removeItem(index){
+    let wishlist = wishlistArray;
+
+    wishlist.splice(index, 1);
+
+    savedItemDisplay();
+}
+
 
 function savedItemDisplay(){
+    console.log(wishlistArray);
+
+    wishlistOutput.innerHTML = "";
+
+    if(wishlistArray.length == 0){
+
+        let card = document.createElement("ion-card");
     
+        let cardContent = document.createElement("ion-card-content");
+        cardContent.innerHTML = `
+        <ion-card>
+            <ion-card-content>
+                Nothing in wishlist yet!
+            </ion-card-content>
+
+        <ion-card>
+        `;
+        wishlistOutput.appendChild(cardContent);
+    }
+    else{
+
+        for(let i = 0; i < wishlistArray.length; i++){
+            let itemIndex = i;
+    
+            let brandName = wishlistArray[i].brandName;
+            let productName = wishlistArray[i].productName;
+            let productImage = wishlistArray[i].imageLink;
+    
+            let card = document.createElement("ion-card");
+    
+            let cardContent = document.createElement("ion-card-content");
+    
+            cardContent.innerHTML = `
+            <ion-card>
+                <ion-img expand="full"src="${productImage}"></ion-img>
+                <ion-card-header>
+                    <ion-card-title>
+                        Name: ${productName}
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                        Brand: ${brandName}
+                    </ion-card-subtitle>
+                </ion-card-header>
+    
+    
+                <ion-card-content>
+                    <ion-button expand="block" onclick='removeItem(${itemIndex})'>Remove from wishlist</ion-button>
+                </ion-card-content>
+    
+            <ion-card>
+            `;
+    
+            wishlistOutput.appendChild(cardContent);
+        }
+    }
 }
 
 
 function reportError(anError){
     console.log(anError);
 }
-
-
-
