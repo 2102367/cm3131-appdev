@@ -56,10 +56,10 @@ function updateDisplay(jsonObj){
         let brandName = currentListArray[i].brand;
         let productName = currentListArray[i].name;
         let productImage = currentListArray[i].image_link;
-        let productTags = currentListArray[i].tag_list;
         let productDesc = currentListArray[i].description;
-        let productRating = currentListArray[i].rating;
-        // console.log(productTags);        
+        let productLink = currentListArray[i].product_link;
+        let productPrice = currentListArray[i].price;
+        //sometimes the price shows zero as there are some problems with the API itself.
 
         let card = document.createElement("ion-card");
 
@@ -70,36 +70,40 @@ function updateDisplay(jsonObj){
             <ion-img expand="full"src="${productImage}"></ion-img>
             <ion-card-header>
                 <ion-card-title>
-                    Name: ${productName}
+                    ${productName}
                 </ion-card-title>
                 <ion-card-subtitle>
                     Brand: ${brandName}
+                </ion-card-subtitle>
+                <ion-card-subtitle>
+                Price: $${productPrice}
                 </ion-card-subtitle>
             </ion-card-header>
 
 
             <ion-card-content>
-                // add rating here maybe
                 <p>${productDesc}</p>
                 <br>
-                <ion-button expand="block" id="wishlist-btn" onclick='saveItem("${productName}", "${brandName}", "${productImage}")'>Add to list</ion-button>                
+                <ion-button expand="block" id="wishlist-btn" onclick='saveItem("${productName}", "${brandName}", "${productImage}", "${productPrice}", "${productLink}")'>Add to list</ion-button>
+                <ion-button expand="block" href="${productLink}" target="_blank">Buy item</ion-button>                
+                
             </ion-card-content>
 
         <ion-card>
         `;
-
-        //den pls dont forget to add da link to buttons (currentListArray[].website_link)
-        //add rating
         outputList.appendChild(cardContent);
     }
 }
 
-function saveItem(name, brand, image_link, description){
+function saveItem(name, brand, image_link, price, product_link){
     //removed description as there are problems with commas and parentheses in description
     let item = {
         productName: name ,
         brandName: brand ,
-        imageLink: image_link,
+        imageLink: image_link ,
+        productLink: product_link ,
+        productPrice: price
+
         // description: description,
     };
 
@@ -129,9 +133,8 @@ function savedItemDisplay(){
         cardContent.innerHTML = `
         <ion-card>
             <ion-card-content>
-                Nothing in wishlist yet!
+                <p>Nothing in wishlist yet!</p>
             </ion-card-content>
-
         <ion-card>
         `;
         wishlistOutput.appendChild(cardContent);
@@ -144,6 +147,9 @@ function savedItemDisplay(){
             let brandName = wishlistArray[i].brandName;
             let productName = wishlistArray[i].productName;
             let productImage = wishlistArray[i].imageLink;
+            let productLink = wishlistArray[i].productLink;
+            let productPrice = wishlistArray[i].productPrice;
+
     
             let card = document.createElement("ion-card");
     
@@ -154,16 +160,20 @@ function savedItemDisplay(){
                 <ion-img expand="full"src="${productImage}"></ion-img>
                 <ion-card-header>
                     <ion-card-title>
-                        Name: ${productName}
+                        ${productName}
                     </ion-card-title>
                     <ion-card-subtitle>
                         Brand: ${brandName}
+                    </ion-card-subtitle>
+                    <ion-card-subtitle>
+                    Price: ${productPrice}
                     </ion-card-subtitle>
                 </ion-card-header>
     
     
                 <ion-card-content>
                     <ion-button expand="block" onclick='removeItem(${itemIndex})'>Remove from wishlist</ion-button>
+                    <ion-button expand="block" href="${productLink}" target="_blank">Buy item</ion-button>                
                 </ion-card-content>
     
             <ion-card>
