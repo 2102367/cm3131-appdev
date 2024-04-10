@@ -35,7 +35,7 @@ function getProducts(){
 function getJson(aResponse){
     // console.log(aResponse);
     const theResponse = aResponse.json();
-    console.log(theResponse);
+    // console.log(theResponse);
 
     return theResponse;
 }
@@ -43,7 +43,7 @@ function getJson(aResponse){
 function updateDisplay(jsonObj){
 
     let currentListArray = jsonObj;
-    console.log(currentListArray);
+    // console.log(currentListArray);
 
     outputList.innerHTML = "";
 
@@ -105,7 +105,7 @@ function saveItem(name, brand, image_link, price, product_link){
     };
 
     wishlistArray.push(item);
-    console.log(wishlistArray);
+    // console.log(wishlistArray);
 }
 
 function removeItem(index){
@@ -118,7 +118,7 @@ function removeItem(index){
 
 
 function savedItemDisplay(){
-    console.log(wishlistArray);
+    // console.log(wishlistArray);
 
     wishlistOutput.innerHTML = "";
 
