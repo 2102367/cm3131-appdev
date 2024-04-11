@@ -26,6 +26,26 @@ const profileBtn = document.getElementById("profile-btn");
 
 profileBtn.addEventListener("click", savedItemDisplay);
 
+//----------------------------------------------storage stuff
+
+let userName = "";
+let faveMakeup = "";
+
+// localStorage.setItem('user', userName);
+// let userData = localStorage.getItem('user');
+
+const saveTextLocal = document.getElementById("save-text-local");
+const getTextLocal = document.getElementById("get-text-local");
+
+const localNameInput = localStorage.getItem("nameInput");
+const localMakeupInput = localStorage.getItem("makeupInput");
+
+saveTextLocal.addEventListener("click", saveToLocalStorage);
+getTextLocal.addEventListener("click", getFromLocalStorage);
+
+const userNameInput = document.getElementById("user-name-input");
+const userMakeupInput = document.getElementById("user-makeup-input");
+
 
 function getProducts(){
     // let searchInputTxt = document.getElementById("input-search").value;
@@ -184,6 +204,30 @@ function savedItemDisplay(){
         }
     }
 }
+
+
+function saveToLocalStorage(){
+    localStorage.setItem("localNameInput", userNameInput.value);
+    localStorage.setItem("localMakeupInput", userMakeupInput.value);
+
+    console.log("saved");
+}
+
+function getFromLocalStorage(){
+    const sessionData1 = localStorage.getItem("localNameInput");
+    const sessionData2 = localStorage.getItem("localMakeupInput");
+
+
+    console.log(sessionData1);
+    console.log(sessionData2);
+    
+    userName = sessionData1;
+    faveMakeup = sessionData2;
+
+
+    
+}
+
 
 function reportError(anError){
     console.log(anError);

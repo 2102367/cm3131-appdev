@@ -139,6 +139,68 @@
                 </ion-content>
             </ion-tab>
 
+            <ion-tab tab="settings">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Your Profile</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+
+                <ion-content>
+                    <ion-card id="search-type-content">
+
+                        <ion-card-header>
+                            <ion-card-title id="title-name">Your profile details:</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-list>
+                                <ion-item>
+                                    <ion-input label-placement="floating" label="Enter your name: " id="user-name-input"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-select placeholder="Select your favourite makeup type:" id="user-makeup-input">
+                                        <ion-select-option value="lipstick">Lipstick</ion-select-option>
+                                        <ion-select-option value="blush">Blush</ion-select-option>
+                                        <ion-select-option value="eyeliner">Eyeliner</ion-select-option>
+                                        <ion-select-option value="eyebrow">Eyebrow</ion-select-option>
+                                        <ion-select-option value="eyeshadow">Eyeshadow</ion-select-option>
+                                        <ion-select-option value="foundation">Foundation</ion-select-option>
+                                        <ion-select-option value="lip_liner">Lip Liner</ion-select-option>
+                                        <ion-select-option value="mascara">Mascara</ion-select-option>
+                                        <ion-select-option value="nail_polish">Nail Polish</ion-select-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-list>
+                                <ion-button id="save-text-local" expand="block">Save profile</ion-button>
+                                <ion-button id="get-text-local" expand="block">Retrieve profile</ion-button>
+
+                            </ion-card-content>
+
+                    </ion-card>
+
+                    <ion-card id="search-type-content">
+
+                        <ion-card-header>
+                            <ion-card-title id="title-name">Current details:</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-list>
+                                <ion-item id="name-output">
+                                    Your name:
+                                </ion-item>
+
+                                <ion-item id="makeup-output">
+                                    Your favourite makeup type: 
+                                </ion-item>
+                            </ion-list>
+                            </ion-card-content>
+
+                    </ion-card>
+
+                </ion-content>
+            </ion-tab>
+
             <ion-tab-bar slot="bottom">
                 <ion-tab-button tab="home">
                     <ion-icon name="home"></ion-icon>
@@ -150,6 +212,10 @@
 
                 <ion-tab-button tab="profile" id="profile-btn">
                     <ion-icon name="person"></ion-icon>
+                </ion-tab-button>
+
+                <ion-tab-button tab="settings">
+                    <ion-icon name="settings"></ion-icon>
                 </ion-tab-button>
             </ion-tab-bar>
         </ion-tabs>
