@@ -46,6 +46,8 @@ getTextLocal.addEventListener("click", getFromLocalStorage);
 const userNameInput = document.getElementById("user-name-input");
 const userMakeupInput = document.getElementById("user-makeup-input");
 
+const profileOutput = document.getElementById("profile-output-list")
+
 
 function getProducts(){
     // let searchInputTxt = document.getElementById("input-search").value;
@@ -205,7 +207,6 @@ function savedItemDisplay(){
     }
 }
 
-
 function saveToLocalStorage(){
     localStorage.setItem("localNameInput", userNameInput.value);
     localStorage.setItem("localMakeupInput", userMakeupInput.value);
@@ -214,18 +215,22 @@ function saveToLocalStorage(){
 }
 
 function getFromLocalStorage(){
+    while (profileOutput.lastElementChild) {
+        profileOutput.removeChild(profileOutput.lastElementChild);
+    }    
     const sessionData1 = localStorage.getItem("localNameInput");
     const sessionData2 = localStorage.getItem("localMakeupInput");
 
+    // console.log(sessionData1);
+    // console.log(sessionData2);
 
-    console.log(sessionData1);
-    console.log(sessionData2);
-    
-    userName = sessionData1;
-    faveMakeup = sessionData2;
+    const newItem1 = document.createElement('ion-item');
+    newItem1.textContent = "Your name: " +  sessionData1;
+    profileOutput.appendChild(newItem1);
 
-
-    
+    const newItem2 = document.createElement('ion-item');
+    newItem2.textContent = "Your favourite makeup type: " + sessionData2;
+    profileOutput.appendChild(newItem2);
 }
 
 
