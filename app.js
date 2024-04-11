@@ -48,6 +48,7 @@ const userMakeupInput = document.getElementById("user-makeup-input");
 
 const profileOutput = document.getElementById("profile-output-list")
 
+// ---------------------------------------------------------------------API functions
 
 function getProducts(){
     // let searchInputTxt = document.getElementById("input-search").value;
@@ -61,6 +62,10 @@ function getJson(aResponse){
 
     return theResponse;
 }
+
+
+// ---------------------------------------------------------------------For search page
+
 
 function updateDisplay(jsonObj){
 
@@ -139,6 +144,9 @@ function removeItem(index){
 }
 
 
+// ---------------------------------------------------------------------For the wishlist area in profile page
+
+
 function savedItemDisplay(){
     // console.log(wishlistArray);
 
@@ -206,6 +214,10 @@ function savedItemDisplay(){
         }
     }
 }
+
+
+// ---------------------------------------------------------------------local storage in settings
+
 
 function saveToLocalStorage(){
     localStorage.setItem("localNameInput", userNameInput.value);
